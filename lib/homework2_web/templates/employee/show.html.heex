@@ -1,0 +1,18 @@
+<h1>Employee Information: <%= @employee.first_name %> <%= @employee.last_name %></h1>
+
+<ul>
+
+  <li>
+    <strong>Department:</strong>
+    <%= @employee.department.name %>
+  </li>
+
+  <li>
+    <strong>Role:</strong>
+    <%= @employee.role.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.employee_path(@conn, :edit, @employee) %></span> |
+<span><%= link "Employee Listing", to: Routes.employee_path(@conn, :index) %></span>

@@ -1,0 +1,40 @@
+<h1>Department: <%= @department.name %> </h1>
+<h3>Employees with this department:</h3>
+
+<ul>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Role</th>
+      <th>Actions</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for s <- @department.employees do  %>
+    <tr>
+      <td><%= s.first_name %></td>
+      <td><%= s.last_name %></td>
+      <td><%=  Homework2.Business.get_role!(s.role_id).name %></td>
+      <td>
+     <span><%= link "Show", to: Routes.employee_path(@conn, :show, @department) %></span>
+     <span><%= link "Edit", to: Routes.employee_path(@conn, :edit, @department) %></span>
+     <span><%= link "Delete", to: Routes.employee_path(@conn, :delete, @department), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+      <td>
+
+
+      </td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.department_path(@conn, :edit, @department) %></span> |
+<span><%= link "Back", to: Routes.department_path(@conn, :index) %></span>

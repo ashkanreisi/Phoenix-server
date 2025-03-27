@@ -1,0 +1,5 @@
+<h1>Edit Department</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.department_path(@conn, :update, @department)) %>
+
+<span><%= link "Back", to: Routes.department_path(@conn, :index) %></span>
