@@ -1,4 +1,4 @@
-# Homework2
+# Phoenix-server
 
 To start your Phoenix server:
 
